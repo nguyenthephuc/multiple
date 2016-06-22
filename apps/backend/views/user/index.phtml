@@ -1,0 +1,19 @@
+<div class="row">
+    <div class="col-lg-12">
+        <!-- text-left -->
+        <div class="text-left">
+            <a href="/admin/user-form/" class="request"> +Thêm tài khoản </a>
+        </div><br>
+        <!-- Start widget table -->
+        <?php $wg = array(
+                        'title'  => array('Họ và tên lót', 'Tên', 'Tài khoản'),
+                        'col'    => array('fname', 'lname', 'username'),
+                        'source' => $data,
+                        'link'   => array('/admin/user-form/', '/admin/user-delete/', '/admin/user-list/')
+                    ); ?>
+        <?php Multiple\Backend\Plugins\Widget::load('table', $wg); ?>
+        <!-- End widget table-->
+    </div>
+</div>
+<!-- don't forget bind value for #pagetitle -->
+<input type="hidden" id="pagetitle" value="<?php echo isset($title)?$title:'' ?>">

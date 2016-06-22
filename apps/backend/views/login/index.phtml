@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Màn hình đăng nhập trang quản trị</title>
+    <link href="/backend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/backend/css/style.css" rel="stylesheet">
+    <style>
+        .container {
+            margin-top: 10%;
+        }
+        .panel-body {
+            background: #DDDDD7;
+            box-shadow: 5px 5px 5px #888888;
+        }
+        .panel-heading {
+            background: #2e8ece !important;
+            color: white !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 col-md-offset-4">
+                <div class="panel">
+                    <div class="panel-heading">
+                        <h3 class="panel-title"><strong>Vui lòng đăng nhập</strong></h3>
+                    </div>
+                    <div class="panel-body">
+                        <form action="" method="POST" role="form" autocomplete="off">
+                            <fieldset>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Tài khoản" name="username" type="text" autofocus value="<?php echo isset($username) ? $username : '' ?>">
+                                </div>
+                                <div class="form-group">
+                                    <input class="form-control" placeholder="Mật khẩu" name="password" type="password" value="<?php echo isset($password) ? $password : '' ?>">
+                                </div>
+                                <div class="text-center" style="color: red;"><?php $this->flashSession->output() ?></div>
+                                <button type="submit" class="osx">Đăng nhập</button>
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer><center>Bản quyền © 2016 Thế Phúc</center></footer>
+</body>
+</html>

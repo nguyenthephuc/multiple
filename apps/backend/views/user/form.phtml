@@ -1,0 +1,33 @@
+<form action="<?php echo $action ?>" method="POST" role="form" style="width: 50%; border: 1px solid #ddd; padding: 10px">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="">Họ và tên lót</label>
+                <input type="text" class="form-control" name="fname" value="<?php echo ($data) ? $data->fname : '' ?>">
+            </div>
+        </div>
+         <div class="col-md-6">
+            <div class="form-group">
+                <label for="">Tên</label>
+                <input type="text" class="form-control" name="lname" value="<?php echo ($data) ? $data->lname : '' ?>">
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-6">
+            <div class="form-group">
+                <label for="">Tên tài khoản</label>
+                <input type="text" class="form-control" name="username" value="<?php echo ($data) ? $data->username : '' ?>">
+            </div>
+        </div>
+         <div class="col-md-6">
+            <div class="form-group">
+                <label for="">Mật khẩu</label>
+                <input type="text" class="form-control" name="pass">
+            </div>
+        </div>
+    </div>
+    <input type="hidden" name="id" value="<?php echo ($data) ? $data->id : '' ?>">
+    <button type="submit" class="btn btn-default">Lưu lại</button>
+</form>

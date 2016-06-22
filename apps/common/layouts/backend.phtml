@@ -1,0 +1,100 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" href="/backend/images/favicon.png">
+    <title><?php echo isset($title)?$title:'' ?></title>
+    <!-- JS -->
+    <script src="/backend/js/jquery-2.2.3.min.js"></script>
+    <script src="/backend/js/bootstrap.min.js"></script>
+    <script src="/backend/js/head.js" type="text/javascript"></script>
+    <!-- CSS -->
+    <link href="/backend/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/backend/css/style.css" rel="stylesheet">
+    <!-- progress -->
+    <link rel="stylesheet" href="/public/include/css/ytLoad.jquery.css">
+    <script src="/public/include/js/jquery.transit.js"></script>
+    <script src="/public/include/js/ytLoad.jquery.js"></script>
+    <script src="/public/backend/ckeditor/ckeditor.js?t=E3NE"></script>
+    <!-- main -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <script src="/backend/js/jquery-ui.js"></script>
+    <script src="/backend/js/main.js"></script>
+    <!-- loadpage -->
+    <script src="/backend/js/loadpage.js"></script>
+    <script>
+        jQuery(document).ready(function(){
+            jQuery( ".renderdatepicker" ).datepicker({ dateFormat: 'yy-mm-dd' });
+            var newheight = jQuery(document).height();
+            jQuery('#dhtmlgoodies_xpPane').height(newheight);
+        });
+    </script>
+</head>
+<body>
+    <div class="pwd">
+        <a class="request" href="/admin/dashboard/">&nbsp;&nbsp;Màn hình chính </a>
+        &#8594; <span id="navicationTile"><?php echo isset($title)?$title:'' ?></span>
+    </div>
+
+    <!-- pageContent -->
+    <div id="pageContent" class="clearfix">
+        <!-- dhtmlgoodies_xpPane -->
+        <div id="dhtmlgoodies_xpPane">
+
+            <div class="dhtmlgoodies_panel">
+                <div class="menu">
+                    <a class="request" href="/admin/demo-list/">&#9656; DEMO</a><br />
+                </div>
+            </div>
+
+            <?php if( (int)$this->session->get('user-login')['role'] === 1): ?>
+            <div class="dhtmlgoodies_panel">
+                <div class="menu">
+                    <a class="request" href="/admin/user-list/">&#9656; Quản lý tài khoản</a><br />
+                </div>
+            </div>
+            <?php endif; ?>
+
+            <div class="dhtmlgoodies_panel">
+                <div class="menu">
+                    <a href="/" target="_blank">&#9656; Đến trang người dùng</a><br />
+                    <a href="/admin/logout/">&#9656; Đăng xuất</a><br />
+                </div>
+            </div>
+
+        </div><!-- /dhtmlgoodies_xpPane -->
+
+        <!-- main content -->
+        <div id="otherContent">
+            <div class="title" id="panelTile"><?php echo isset($title)?$title:'' ?></div>
+            <div id="page-wrapper">
+                <?php echo $this->getContent(); ?>
+                <noscript>
+                        <center><strong>Warning:</strong> You don't have javascript enabled. Good luck with that.</center>
+                </noscript>
+            </div>
+        </div><!-- / main content -->
+    </div><!-- / pageContent -->
+    <script type="text/javascript">
+        initDhtmlgoodies_xpPane(
+            Array(
+                'DEMO',
+                'Người dùng',
+                '&#10003;'
+            ),
+            Array(
+                true,
+                true,
+                true
+            ),
+            Array(
+                'pane0',
+                'pane1',
+                'pane2'
+            )
+        );
+    </script>
+</body>
+</html>
