@@ -43,12 +43,6 @@
         <!-- dhtmlgoodies_xpPane -->
         <div id="dhtmlgoodies_xpPane">
 
-            <div class="dhtmlgoodies_panel">
-                <div class="menu">
-                    <a class="request" href="/admin/demo-list/">&#9656; DEMO</a><br />
-                </div>
-            </div>
-
             <?php if( (int)$this->session->get('user-login')['role'] === 1): ?>
             <div class="dhtmlgoodies_panel">
                 <div class="menu">
@@ -80,19 +74,16 @@
     <script type="text/javascript">
         initDhtmlgoodies_xpPane(
             Array(
-                'DEMO',
                 'Người dùng',
                 '&#10003;'
             ),
             Array(
                 true,
-                true,
                 true
             ),
             Array(
                 'pane0',
-                'pane1',
-                'pane2'
+                'pane1'
             )
         );
     </script>

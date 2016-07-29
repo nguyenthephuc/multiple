@@ -90,7 +90,7 @@ class Validator {
         if(!is_array($data)) return false;
         switch ($data[2]) {
             case 'require':
-                if(empty($data[1]))
+                if($data[1]==='')
                     $mycheck[$data[0]] = $data[0].self::$requireErr;
                 break;
             case 'email':
