@@ -8,7 +8,7 @@ class UserController extends ControllerBase
 {
     public function onConstruct()
     {
-        parent::authentical(1);
+        parent::authentical(true);
         $this->view->setTemplateAfter('backend');
     }
 
